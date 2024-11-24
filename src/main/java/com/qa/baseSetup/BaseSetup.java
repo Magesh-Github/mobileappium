@@ -16,17 +16,19 @@ public class BaseSetup extends Globalvariables{
 	public void lanuchApp(){
 		if (deviceType=="IOS") {
 			try {
-				DesiredCapabilities caps =new DesiredCapabilities();
-				caps.setCapability("platformname", "IOS");
-				caps.setCapability("platformnameVersion", "17.5");
-				caps.setCapability("Devicename", "iPhone 15");
-				caps.setCapability("App", "/Users/elite/Desktop/CommandIQ.app");
-				caps.setCapability("AutomationName", "xcitest");
-				caps.setCapability("udid", "626F724D-98E6-47C7-A170-F57256A4498C");
-				caps.setCapability(CapabilityType.TIMEOUTS, 30);
-				URL url= new URL("http://127.0.0.1:4723");
-				driver=new AppiumDriver (url,caps);
-				driver=new IOSDriver(url, caps);
+				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+			    desiredCapabilities.setCapability("platformName", "iOS");
+			    desiredCapabilities.setCapability("appium:platformVersion", "17.5");
+			    desiredCapabilities.setCapability("appium:deviceName", "iPhone 15");
+			    desiredCapabilities.setCapability("appium:app", "/Users/elite/Desktop/CommandIQ.app");
+			    desiredCapabilities.setCapability("appium:noRest", true);
+			    desiredCapabilities.setCapability("appium:automationName", "XCUITest");
+			    desiredCapabilities.setCapability("appium:wdaLaunchTimeout", "120000");
+			    desiredCapabilities.setCapability("appium:includeSafariInWebviews", true);
+			    desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
+			    desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
+			    desiredCapabilities.setCapability(CapabilityType.TIMEOUTS, 180);
+				driver=new IOSDriver(new URL("http://127.0.0.1:4723"), desiredCapabilities);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
