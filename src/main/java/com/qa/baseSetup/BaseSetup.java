@@ -16,7 +16,7 @@ public class BaseSetup{
 	public void lanuchApp(){
 		String deviceType = System.getProperty("iosTestDevice");
 		System.out.println("Test"+ deviceType);
-		if (deviceType=="IOS") {
+		if (deviceType.equals("IOS")) {
 			try {
 				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 			    desiredCapabilities.setCapability("platformName", "iOS");
