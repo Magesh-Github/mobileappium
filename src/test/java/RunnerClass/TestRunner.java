@@ -18,6 +18,7 @@ monochrome = true,
 plugin = {"pretty", "html:target/HTMLReport/Reports.html" })
 public class TestRunner extends Globalvariables {
 	static MangerAppiumServer mangerAppiumServer = new MangerAppiumServer();
+    String iosTestDevice = System.getProperty("iosTestDevice");
 
 	@BeforeClass
 	public static void setUp() {
