@@ -29,7 +29,9 @@ public class MangerAppiumServer {
 		// Start the server with bulider
 		appiumDriverLocalService = AppiumDriverLocalService.buildService(appiumServiceBuilder);
 		appiumDriverLocalService.start();
-		System.out.println();
+		System.out.println("Appium server start");
+		String iosTestDevice = System.getProperty("iosTestDevice");
+		System.out.println(iosTestDevice);
 	}
 
 	public static void stopAppiumserver() {
