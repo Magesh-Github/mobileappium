@@ -16,7 +16,7 @@ public class BaseSetup extends Globalvariables{
 	public void lanuchApp(){
 		deviceType = System.getProperty("iosTestDevice");
 		System.out.println("Test"+ deviceType);
-		if (deviceType=="IOS") {
+		if (System.getProperty("iosTestDevice")=="IOS") {
 			try {
 				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 			    desiredCapabilities.setCapability("platformName", "iOS");

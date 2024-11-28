@@ -31,7 +31,7 @@ public class MangerAppiumServer extends Globalvariables{
 		appiumDriverLocalService = AppiumDriverLocalService.buildService(appiumServiceBuilder);
 		appiumDriverLocalService.start();
 		System.out.println("Appium server start");
-		deviceType = System.getProperty("iosTestDevice");
+        deviceType = System.getProperty("iosTestDevice");
 		System.out.println(deviceType);
 	}
 
