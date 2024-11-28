@@ -5,6 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import com.qa.baseSetup.BaseSetup;
 import com.qa.utils.Globalvariables;
+import com.qa.utils.JenkinsVariables;
 import com.qa.utils.MangerAppiumServer;
 
 import io.cucumber.junit.CucumberOptions;
@@ -18,7 +19,7 @@ monochrome = true,
 plugin = {"pretty", "html:target/HTMLReport/Reports.html" })
 public class TestRunner extends Globalvariables {
 	static MangerAppiumServer mangerAppiumServer = new MangerAppiumServer();
-    String iosTestDevice = System.getProperty("iosTestDevice");
+	static JenkinsVariables jenkinsVariables = new JenkinsVariables();
 
 	@BeforeClass
 	public static void setUp() {
