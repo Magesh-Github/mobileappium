@@ -14,6 +14,7 @@ public class BaseSetup extends Globalvariables{
 	
 	AppiumDriver driver;
 	public void lanuchApp(){
+		System.out.println("Device"+deviceType);
 		if (deviceType.equals("IOS")) {
 			try {
 				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
