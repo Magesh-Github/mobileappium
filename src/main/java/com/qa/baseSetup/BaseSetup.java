@@ -10,13 +10,13 @@ import com.qa.utils.Globalvariables;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 
-public class BaseSetup extends Globalvariables{
+public class BaseSetup{
 	
 	AppiumDriver driver;
 	public void lanuchApp(){
-		deviceType = System.getProperty("iosTestDevice");
+		String deviceType = System.getProperty("iosTestDevice");
 		System.out.println("Test"+ deviceType);
-		if (System.getProperty("iosTestDevice")=="IOS") {
+		if (deviceType=="IOS") {
 			try {
 				DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 			    desiredCapabilities.setCapability("platformName", "iOS");
