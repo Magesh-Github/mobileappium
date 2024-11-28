@@ -7,11 +7,10 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
-public class MangerAppiumServer extends Globalvariables{
+public class MangerAppiumServer{
 
 	public static AppiumServiceBuilder appiumServiceBuilder;
 	public static AppiumDriverLocalService appiumDriverLocalService;
-	public static String deviceType;
 	
 	public static void startAppiumServer() {
 		killAppiumSession();
@@ -31,8 +30,8 @@ public class MangerAppiumServer extends Globalvariables{
 		appiumDriverLocalService = AppiumDriverLocalService.buildService(appiumServiceBuilder);
 		appiumDriverLocalService.start();
 		System.out.println("Appium server start");
-        deviceType = System.getProperty("iosTestDevice");
-		System.out.println(deviceType);
+//        deviceType = System.getProperty("iosTestDevice");
+//		System.out.println(deviceType);
 	}
 
 	public static void stopAppiumserver() {
