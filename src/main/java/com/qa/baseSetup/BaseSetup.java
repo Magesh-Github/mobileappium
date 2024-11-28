@@ -10,11 +10,11 @@ import com.qa.utils.Globalvariables;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 
-public class BaseSetup{
+public class BaseSetup extends Globalvariables{
 	
 	AppiumDriver driver;
 	public void lanuchApp(){
-		String deviceType = System.getProperty("iosTestDevice");
+        deviceType = System.getProperty("iosTestDevice");
 		System.out.println("Test"+ deviceType);
 		if (deviceType.equals("IOS")) {
 			try {
