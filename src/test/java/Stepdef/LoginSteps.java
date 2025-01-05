@@ -1,32 +1,40 @@
 package Stepdef;
 
+import java.time.Duration;
+
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
+
+import com.qa.pages.LoginPage;
 import com.qa.utils.Globalvariables;
-
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
-public class LoginSteps extends Globalvariables{
+import io.cucumber.java.en.*;
 
 
-	@Given("user is on login page")
-	public void user_is_on_login_page() {
-	System.out.println("test");
+public class LoginSteps extends Globalvariables {
+	LoginPage loginpage=new LoginPage(driver);
+	Alert alert = driver.switchTo().alert();
+
+	@Given("navigate to login screen")
+	public void navigate_to_login_screen() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+		String ActualTxt= alert.getText();
+		Assert.assertEquals(ActualTxt, "“CommandIQ” Would Like to Send You Notifications\n"
+				+ "Notifications may include alerts, sounds and icon badges. These can be configured in Settings.");
+        alert.accept();
+		System.out.println("Alerts");
+		loginpage.clickLetGetStartedbtn();
+		//driver.quit();
+
 	}
 
-	@When("user enter username and password")
-	public void user_enter_username_and_password() {
-		System.out.println("test");
+	@When("enter the vaild username and password")
+	public void enter_the_vaild_username_and_password() {
+
 	}
 
-	@And("click the login button")
+	@When("click the login button")
 	public void click_the_login_button() {
-		System.out.println("test");
-	}
 
-	@Then("user is navigate to the home page")
-	public void user_is_navigate_to_the_home_page() {
-		System.out.println("test");
 	}
 }

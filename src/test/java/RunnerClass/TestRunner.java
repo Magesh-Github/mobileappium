@@ -9,6 +9,7 @@ import com.qa.utils.JenkinsVariables;
 import com.qa.utils.MangerAppiumServer;
 
 import io.cucumber.junit.CucumberOptions;
+import io.appium.java_client.AppiumDriver;
 import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
@@ -23,9 +24,9 @@ public class TestRunner extends Globalvariables {
 
 	@BeforeClass
 	public static void setUp() {
+		MangerAppiumServer.startAppiumServer();
+		BaseSetup setup=new BaseSetup();
 		try {
-			MangerAppiumServer.startAppiumServer();
-			BaseSetup setup=new BaseSetup();
 			setup.lanuchApp();
 		} catch (Exception e) {
 			e.printStackTrace();

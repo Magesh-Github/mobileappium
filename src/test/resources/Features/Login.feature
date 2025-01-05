@@ -1,8 +1,15 @@
-Feature: feature to test scroll funtionalites
+Feature: Sign Up screen funtionalites
 
-@Login
-  Scenario: Check User shouled be scroll down the screen
-    Given user is on login page
-    When user enter username and password
+  @Login
+  Scenario: Verify and validate the sign up screen
+    Given navigate to login screen
+    #When verify the <staticUiText> in sign up screen
+    When enter the vaild username and password
     And click the login button
-    Then user is navigate to the home page
+    #Examples: 
+      #| staticUiText |
+      #| First Name   |
+      #| Last Name    |
+      #| Email        |
+      #| Password     |
+      #| Location     |
